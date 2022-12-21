@@ -1,7 +1,9 @@
-import "./style.css";
-import javascriptLogo from "./javascript.svg";
+import "../css/style.css";
+import javascriptLogo from "../public/javascript.svg";
 import { setupCounter } from "./counter.js";
+import { random_bg_color } from "./counter.js";
 
+random_bg_color();
 document.querySelector("#app").innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
