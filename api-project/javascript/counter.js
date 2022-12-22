@@ -10,6 +10,7 @@ export function setupCounter(element) {
   });
   setCounter(0);
 }
+
 export function random_bg_color() {
   var x = Math.floor(Math.random() * 256);
   var y = Math.floor(Math.random() * 256);
