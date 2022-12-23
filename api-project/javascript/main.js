@@ -6,18 +6,18 @@ import { random_bg_color } from "./counter.js";
 random_bg_color();
 document.querySelector("#app").innerHTML = `
   <div>
-    <a href="https://vitejs.dev" target="_blank">
+    <a href="https://www.youtube.com/watch?v=5Q_2nrp9OTg" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+    <a href="https://www.dictionary.com/browse/noob" target="_blank">
       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
     </a>
-    <h1>Hello Vite!</h1>
+    <h1>What's Up Noob!</h1>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
     <p class="read-the-docs">
-      Click on the Vite logo to learn more
+      Click on the logos to learn more about noobs
     </p>
   </div>
 `;
