@@ -1,4 +1,4 @@
-import "../css/style.css";
+/* import "../css/style.css";
 import javascriptLogo from "../public/javascript.svg";
 import { setupCounter } from "./counter.js";
 import { random_bg_color } from "./counter.js";
@@ -23,3 +23,14 @@ document.querySelector("#app").innerHTML = `
 `;
 
 setupCounter(document.querySelector("#counter"));
+ */
+
+function greet(name) {
+  const greetPromise = new Promise(function (resolve, reject) {
+    resolve(`Hello ${name}`);
+  });
+  return greetPromise;
+}
+
+const suzie = greet("suzie");
+console.log(suzie);
