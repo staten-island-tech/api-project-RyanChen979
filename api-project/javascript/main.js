@@ -1,9 +1,6 @@
-/* import "../css/style.css";
-import javascriptLogo from "../public/javascript.svg";
-import { setupCounter } from "./counter.js";
-import { random_bg_color } from "./counter.js";
+import "../css/style.css";
+import { DOM } from "./dom";
 
-random_bg_color();
 document.querySelector("#app").innerHTML = `
   <div>
     <a href="https://www.youtube.com/watch?v=5Q_2nrp9OTg" target="_blank">
@@ -23,14 +20,3 @@ document.querySelector("#app").innerHTML = `
 `;
 
 setupCounter(document.querySelector("#counter"));
- */
-
-function greet(name) {
-  const greetPromise = new Promise(function (resolve, reject) {
-    resolve(`Hello ${name}`);
-  });
-  return greetPromise;
-}
-
-const suzie = greet("suzie");
-console.log(suzie);

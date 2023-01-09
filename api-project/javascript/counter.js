@@ -1,4 +1,4 @@
-export function setupCounter(element) {
+/* export function setupCounter(element) {
   let counter = 0;
   const setCounter = (count) => {
     counter = count;
@@ -19,4 +19,4 @@ export function random_bg_color() {
   console.log(bgColor);
 
   document.body.style.background = bgColor;
-}
+} */
