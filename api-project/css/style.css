@@ -6,13 +6,24 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: RGB(24, 109, 182);
+  background: linear-gradient(
+    to bottom right,
+    rgba(24, 109, 182, 0.87),
+    rgba(187, 0, 0, 0.87)
+  );
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --h1: ;
+  --h2: ;
+  --h3: ;
+  --h4: ;
+  --h5: ;
+  --h6: ;
 }
 
 a {
