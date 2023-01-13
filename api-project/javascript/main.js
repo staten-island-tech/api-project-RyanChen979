@@ -8,19 +8,13 @@ async function getAPI(APIurl) {
 }
 getAPI(APIurl);
 
-document.querySelector(".title").innerHTML = `
-  <div>
-    <h1>API Search</h1>
-  </div>
-`;
-
-document.querySelector(".search").innerHTML = `
+DOM.searchInput.innerHTML = `
   <div>
   
   </div>
 `;
 
-document.querySelector(".content").innerHTML = `
+DOM.content.innerHTML = `
   <div>
   <p>hello</p>
   </div>
