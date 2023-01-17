@@ -2,11 +2,17 @@ import "../css/style.css";
 import { DOM } from "./dom";
 const APIurl = "https://valorant-api.com/v1/agents";
 
-async function getAPI(APIurl) {
-  const response = await fetch(APIurl);
-  console.log(response);
+async function getData(APIurl) {
+  try {
+    const response = await fetch(APIurl);
+    const data = await response.json();
+    console.log(data);
+    console.log(data.bustPortrait);
+  } catch (error) {
+    console.log(error);
+  }
 }
-getAPI(APIurl);
+getData(APIurl);
 
 DOM.searchInput.innerHTML = `
   <div>

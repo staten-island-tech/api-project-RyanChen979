@@ -45,7 +45,6 @@ body {
 .title {
   font-family: "Kanit", sans-serif;
   font-size: var(--h1);
-  text-shadow: -5px 5px #558abb;
   background: linear-gradient(
     rgba(254, 9, 68, 0.87),
     rgba(254, 174, 150, 0.87)
@@ -54,14 +53,6 @@ body {
   -webkit-text-fill-color: transparent;
   margin: 0 auto;
   padding: 2rem;
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #000000;
 }
 
 button {
