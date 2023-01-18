@@ -7,12 +7,20 @@ async function getData(APIurl) {
     const response = await fetch(APIurl);
     const data = await response.json();
     console.log(data);
-    console.log(data.bustPortrait);
+    console.log(data[0].displayName);
   } catch (error) {
     console.log(error);
   }
 }
 getData(APIurl);
+
+DOM.button.addEventListener("submit", function clearInputs() {
+  // DOMSelector.name.value = "";
+  // DOMSelector.character.value = "";
+  // DOMSelector.url.value = "";
+  // DOMSelector.gender.value = "";
+  // DOMSelector.age.value = "";
+});
 
 // DOM.searchInput.innerHTML = `
 //   <div>
