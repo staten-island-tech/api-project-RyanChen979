@@ -6,21 +6,23 @@ async function getData(APIurl) {
   try {
     const response = await fetch(APIurl);
     const data = await response.json();
+    // DOM.content.insert = data.forEach((agent) => {
+    //   console.log(agent.uuid);
+    // });
     console.log(data);
-    console.log(data[0].displayName);
   } catch (error) {
     console.log(error);
   }
 }
 getData(APIurl);
 
-DOM.button.addEventListener("submit", function clearInputs() {
-  // DOMSelector.name.value = "";
-  // DOMSelector.character.value = "";
-  // DOMSelector.url.value = "";
-  // DOMSelector.gender.value = "";
-  // DOMSelector.age.value = "";
-});
+// DOM.button.addEventListener("submit", function clearInputs() {
+//   DOMSelector.name.value = "";
+//   DOMSelector.character.value = "";
+//   DOMSelector.url.value = "";
+//   DOMSelector.gender.value = "";
+//   DOMSelector.age.value = "";
+// });
 
 // DOM.searchInput.innerHTML = `
 //   <div>
