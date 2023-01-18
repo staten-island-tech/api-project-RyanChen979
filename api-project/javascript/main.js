@@ -14,14 +14,14 @@ async function getData(APIurl) {
 }
 getData(APIurl);
 
-DOM.searchInput.innerHTML = `
-  <div>
-  
-  </div>
-`;
+// DOM.searchInput.innerHTML = `
+//   <div>
 
-DOM.content.innerHTML = `
-  <div>
-  <p>hello</p>
-  </div>
-`;
+//   </div>
+// `;
+
+// DOM.content.innerHTML = `
+//   <div>
+
+//   </div>
+// `;

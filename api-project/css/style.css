@@ -43,7 +43,7 @@ body {
 }
 
 .title {
-  font-family: "Kanit", sans-serif;
+  font-family: "Kanit";
   font-size: var(--h1);
   background: linear-gradient(
     rgba(254, 9, 68, 0.87),
@@ -51,8 +51,8 @@ body {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 0 auto;
-  padding: 2rem;
+  padding: 2.5rem;
+  margin: 3rem 0 0 0;
 }
 
 button {
@@ -62,6 +62,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
+  color: black;
   background-color: cyan;
   cursor: pointer;
   transition: border-color 0.25s;
