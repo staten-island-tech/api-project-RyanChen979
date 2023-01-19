@@ -3,16 +3,21 @@ import { DOM } from "./dom";
 const APIurl = "https://valorant-api.com/v1/agents";
 
 async function getData(APIurl) {
-  try {
-    const response = await fetch(APIurl);
-    const data = await response.json();
-    // DOM.content.insert = data.forEach((agent) => {
-    //   console.log(agent.uuid);
-    // });
-    console.log(data);
+  const response = await fetch(APIurl);
+  const data = await response.json();
+
+  data.data.forEach((el) => {
+    DOM.content.insertAdjacentHTML(
+      "beforeend",
+      `<div class="names"><h2>${el.displayName}</h2></div>`
+    );
+    console.log(el.displayName);
+  });
+  console.log(data);
+  /* try {
   } catch (error) {
     console.log(error);
-  }
+  } */
 }
 getData(APIurl);
 
