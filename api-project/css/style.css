@@ -54,13 +54,30 @@ body {
   margin: 3rem 0 0 0;
 }
 
-.names {
+.content {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 35%;
+  justify-content: space-around;
+  width: 20%;
+  text-align: center;
+
+  margin: 0;
+  padding: 2rem;
+
+  font-family: "Crimson Text", serif;
 }
 
+.agent {
+  color: green;
+}
+
+.image {
+  width: 15rem;
+}
+
+.description {
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;

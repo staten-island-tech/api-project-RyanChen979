@@ -2,41 +2,32 @@ import "../css/style.css";
 import { DOM } from "./dom";
 const APIurl = "https://valorant-api.com/v1/agents";
 
-async function getData(APIurl) {
-  const response = await fetch(APIurl);
-  const data = await response.json();
+/* function userInput() {
+  let input = DOM.searchInput;
+}
 
-  data.data.forEach((el) => {
-    DOM.content.insertAdjacentHTML(
-      "beforeend",
-      `<div class="names"><h2>${el.displayName}</h2></div>`
-    );
-    console.log(el.displayName);
-  });
-  console.log(data);
-  /* try {
+DOM.button.addEventListener("submit", function clearInputs() {
+  DOMSelector.searchInput.value = "";
+}); */
+
+async function getData(APIurl) {
+  try {
+    const response = await fetch(APIurl);
+    const data = await response.json();
+    console.log(data);
+    data.data.forEach((el) => {
+      DOM.content.insertAdjacentHTML(
+        "beforeend",
+        `<div class="agent">
+        <h2>${el.displayName}</h2>
+        <img class="image" src="${el.fullPortrait}" alt="character-image" />
+        <p class="description">${el.description}</p>
+        </div>`
+      );
+      console.log(el.displayName);
+    });
   } catch (error) {
     console.log(error);
-  } */
+  }
 }
 getData(APIurl);
-
-// DOM.button.addEventListener("submit", function clearInputs() {
-//   DOMSelector.name.value = "";
-//   DOMSelector.character.value = "";
-//   DOMSelector.url.value = "";
-//   DOMSelector.gender.value = "";
-//   DOMSelector.age.value = "";
-// });
-
-// DOM.searchInput.innerHTML = `
-//   <div>
-
-//   </div>
-// `;
-
-// DOM.content.innerHTML = `
-//   <div>
-
-//   </div>
-// `;
