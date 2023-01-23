@@ -1,6 +1,6 @@
 import "../css/style.css";
 import { DOM } from "./DOM";
-const APIurl = "https://valorant-api.com/v1/ceremonies";
+const APIurl = "https://valorant-api.com/v1/bundles";
 
 async function getData(APIurl) {
   try {
