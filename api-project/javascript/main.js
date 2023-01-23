@@ -1,6 +1,6 @@
 import "../css/style.css";
 import { DOM } from "./DOM";
-const APIurl = "https://valorant-api.com/v1/agents";
+const APIurl = "https://valorant-api.com/v1/ceremonies";
 
 async function getData(APIurl) {
   try {
@@ -13,7 +13,7 @@ async function getData(APIurl) {
         "beforeend",
         `<div class="agent">
          <h2 class="name">${el.displayName}</h2>
-         <img class="image" src="${el.fullPortrait}" alt="character-image" />
+         <img class="image" src="${el.displayIcon}" alt="character-image" />
          </div>`
       );
     });
