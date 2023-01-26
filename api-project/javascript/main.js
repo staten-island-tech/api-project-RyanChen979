@@ -1,30 +1,81 @@
 import "../css/style.css";
 import { DOM } from "./DOM";
-const APIurl = "https://valorant-api.com/v1/bundles";
+const agentsURL = "https://valorant-api.com/v1/agents";
+const weaponsAndGearsURL = "https://valorant-api.com/v1/weapons";
+const buddiesURL = "https://valorant-api.com/v1/buddies";
+const bundlesURL = "https://valorant-api.com/v1/bundles";
 
-async function getData(APIurl) {
-  try {
-    const response = await fetch(APIurl);
-    const data = await response.json();
-    console.log(data);
-    data.data.forEach((el) => {
-      console.log(`Name: ${el.displayName}, UUID: ${el.uuid}`);
-      DOM.content.insertAdjacentHTML(
-        "beforeend",
-        `<div class="agent">
+function agentsDATA(data) {
+  data.data.forEach((el) => {
+    DOM.content.insertAdjacentHTML(
+      "beforeend",
+      `<div class="card">
          <h2 class="name">${el.displayName}</h2>
          <img class="image" src="${el.displayIcon}" alt="character-image" />
          </div>`
-      );
-    });
-    return data;
+    );
+  });
+}
+
+function weaponsAndGearsDATA(data) {
+  data.data.forEach((el) => {
+    DOM.content.insertAdjacentHTML(
+      "beforeend",
+      `<div class="card">
+         <h2 class="name">${el.displayName}</h2>
+         <img class="image" src="${el.displayIcon}" alt="character-image" />
+         </div>`
+    );
+  });
+}
+
+async function agents(agentsURL) {
+  try {
+    const response = await fetch(agentsURL);
+    const data = await response.json();
+    agentsDATA(data);
   } catch (error) {
     console.log(error);
   }
 }
-getData(APIurl);
+agents(agentsURL);
 
-function searchAPI() {
+async function weaponsAndGears(weaponsAndGearsURL) {
+  try {
+    const response = await fetch(weaponsAndGearsURL);
+    const data = await response.json();
+    weaponsAndGearsDATA(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+weaponsAndGears(weaponsAndGearsURL);
+
+/* async function getData(agentsURL) {
+  try {
+    const response = await fetch(agentsURL);
+    const data = await response.json();
+    console.log(data);
+    agentsDATA(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+getData(agentsURL);
+
+async function getData(agentsURL) {
+  try {
+    const response = await fetch(agentsURL);
+    const data = await response.json();
+    console.log(data);
+    agentsDATA(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+getData(agentsURL); */
+
+/* function searchAPI() {
   DOM.button.addEventListener("submit", function searchAgent() {
     DOM.content.innerHTML = "";
 
@@ -45,4 +96,4 @@ function searchAPI() {
   });
   searchAgent();
 }
-searchAPI();
+searchAPI(); */
