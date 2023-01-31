@@ -148,6 +148,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   text-align: justify;
+  width: 85%;
 }
 .card-back li {
   width: 40%;
