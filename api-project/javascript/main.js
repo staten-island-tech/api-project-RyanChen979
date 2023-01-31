@@ -10,9 +10,26 @@ function agentsDATA(data) {
     DOM.content.insertAdjacentHTML(
       "beforeend",
       `<div class="card">
-         <h2 class="name">${el.displayName}</h2>
-         <img class="image" src="${el.displayIcon}" alt="character-image" />
-         </div>`
+      <div class="card-inner">
+        <div class="card-front">
+          <img class="image" src="${el.fullPortrait}" alt="character-image" />
+        </div>
+        <div class="card-back">
+          <h2 class="name">${el.displayName}</h2>
+          <img class="image" src="${el.displayIcon}" alt="character-image" />
+          <p class="description">${el.description}</p>
+          <h3>Abilities:</h3>
+          <ul>
+            <li>${el.abilities[0].displayName}</li>
+            <img src="${el.abilities[0].displayIcon}" alt="Ability 1 image">
+            <li>${el.abilities[1].displayName}</li>
+            <img src="${el.abilities[1].displayIcon}" alt="Ability 2 image">
+            <li>${el.abilities[2].displayName}</li>
+            <img src="${el.abilities[2].displayIcon}" alt="Ability 3 image">
+          </ul>
+        </div>
+      </div>
+    </div>`
     );
   });
 }
@@ -22,9 +39,17 @@ function weaponsAndGearsDATA(data) {
     DOM.content.insertAdjacentHTML(
       "beforeend",
       `<div class="card">
-         <h2 class="name">${el.displayName}</h2>
-         <img class="image" src="${el.displayIcon}" alt="character-image" />
-         </div>`
+      <div class="card-inner">
+        <div class="card-front">
+          <img class="image" src="${el.displayIcon}" alt="character-image" />
+        </div>
+        <div class="card-back">
+          <h2 class="name">${el.displayName}</h2>
+          <img class="image" src="${el.displayIcon}" alt="character-image" />
+          <p class="description">${el.description}</p>
+        </div>
+      </div>
+    </div>`
     );
   });
 }
@@ -49,7 +74,7 @@ async function weaponsAndGears(weaponsAndGearsURL) {
     console.log(error);
   }
 }
-weaponsAndGears(weaponsAndGearsURL);
+// weaponsAndGears(weaponsAndGearsURL);
 
 /* async function getData(agentsURL) {
   try {
@@ -89,7 +114,6 @@ getData(agentsURL); */
            <h2 class="name">${newAgent.displayName}</h2>
            <img class="image" src="${newAgent.fullPortrait}" alt="character-image" />
            <p class="description">${newAgent.description}</p>
-           <p class="dev">Developer: ${newAgent.developerName}</p>
            </div>`
       );
     }
