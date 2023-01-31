@@ -1,5 +1,5 @@
 import "../css/style.css";
-import { DOM } from "./DOM";
+import { DOM } from "./dom.js";
 const agentsURL = "https://valorant-api.com/v1/agents";
 
 function agentsDATA(data) {
