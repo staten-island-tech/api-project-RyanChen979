@@ -9,20 +9,20 @@ function agentsDATA(data) {
       `<div class="card">
       <div class="card-inner">
         <div class="card-front">
-          <img class="image" src="${el.fullPortrait}" alt="character-image" />
+          <img class="image" src="${el.fullPortrait}" alt="" />
         </div>
         <div class="card-back">
           <h2 class="name">${el.displayName}</h2>
-          <img class="image" src="${el.displayIcon}" alt="character-image" />
+          <img class="image" src="${el.displayIcon}" alt="" />
           <p class="description">${el.description}</p>
           <h3>Abilities:</h3>
           <ul>
             <li>${el.abilities[0].displayName}</li>
-            <img src="${el.abilities[0].displayIcon}" alt="Ability 1 image">
+            <img src="${el.abilities[0].displayIcon}" alt="">
             <li>${el.abilities[1].displayName}</li>
-            <img src="${el.abilities[1].displayIcon}" alt="Ability 2 image">
+            <img src="${el.abilities[1].displayIcon}" alt="">
             <li>${el.abilities[2].displayName}</li>
-            <img src="${el.abilities[2].displayIcon}" alt="Ability 3 image">
+            <img src="${el.abilities[2].displayIcon}" alt="">
           </ul>
         </div>
       </div>
@@ -62,20 +62,20 @@ DOM.form.addEventListener("submit", function (a) {
             `<div class="card">
       <div class="card-inner">
         <div class="card-front">
-          <img class="image" src="${el.fullPortrait}" alt="character-image" />
+          <img class="image" src="${el.fullPortrait}" alt="" />
         </div>
         <div class="card-back">
           <h2 class="name">${el.displayName}</h2>
-          <img class="image" src="${el.displayIcon}" alt="character-image" />
+          <img class="image" src="${el.displayIcon}" alt="" />
           <p class="description">${el.description}</p>
           <h3>Abilities:</h3>
           <ul>
             <li>${el.abilities[0].displayName}</li>
-            <img src="${el.abilities[0].displayIcon}" alt="Ability 1 image">
+            <img src="${el.abilities[0].displayIcon}" alt="">
             <li>${el.abilities[1].displayName}</li>
-            <img src="${el.abilities[1].displayIcon}" alt="Ability 2 image">
+            <img src="${el.abilities[1].displayIcon}" alt="">
             <li>${el.abilities[2].displayName}</li>
-            <img src="${el.abilities[2].displayIcon}" alt="Ability 3 image">
+            <img src="${el.abilities[2].displayIcon}" alt="">
           </ul>
         </div>
       </div>

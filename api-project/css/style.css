@@ -56,6 +56,10 @@ body {
   margin: 3rem 0 0 0;
 }
 
+label {
+  font-size: 1.4rem;
+}
+
 .button {
   border-radius: 8px;
   border: 1px solid transparent;
