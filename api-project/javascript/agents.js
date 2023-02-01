@@ -36,7 +36,12 @@ async function agents(agentsURL) {
   try {
     const response = await fetch(agentsURL);
     const data = await response.json();
-    agentsDATA(data);
+
+    if (data.status <= 199 || data.status >= 300) {
+      throw new Error(data);
+    } else {
+      agentsDATA(data);
+    }
   } catch (error) {
     console.log(error);
   }
