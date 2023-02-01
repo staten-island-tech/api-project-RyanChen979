@@ -28,6 +28,7 @@ function agentsDATA(data) {
       </div>
     </div>`
     );
+    console.log(el.displayName);
   });
 }
 
@@ -42,18 +43,23 @@ async function agents(agentsURL) {
 }
 agents(agentsURL);
 
-function searchAPI() {
-  let input = DOM.searchInput.value;
+DOM.form.addEventListener("submit", function (a) {
+  a.preventDefault();
 
-  DOM.button.addEventListener("submit", function searchAgent() {
-    DOM.content.innerHTML = "";
-    console.log(input.value);
+  let userInput = DOM.searchInput.value;
+  console.log(userInput);
 
-    /* function singleAgent(data) {
-      const search = data.data.filter(data.data);
-      DOM.content.insertAdjacentHTML(
-        "beforeend",
-        `<div class="card">
+  DOM.content.innerHTML = "";
+  async function newAgent(agentsURL, userInput) {
+    try {
+      const response = await fetch(agentsURL);
+      const data = await response.json();
+      data.data
+        .filter((el) => el.displayName.includes(`${userInput}`))
+        .map((el) => {
+          DOM.content.insertAdjacentHTML(
+            "beforeend",
+            `<div class="card">
       <div class="card-inner">
         <div class="card-front">
           <img class="image" src="${el.fullPortrait}" alt="character-image" />
@@ -74,9 +80,11 @@ function searchAPI() {
         </div>
       </div>
     </div>`
-      );
-    } */
-    searchAgent();
-  });
-}
-searchAPI();
+          );
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  newAgent(agentsURL, userInput);
+});
