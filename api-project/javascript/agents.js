@@ -16,14 +16,14 @@ function agentsDATA(data) {
           <img class="image" src="${el.displayIcon}" alt="" />
           <p class="description">${el.description}</p>
           <h3>Abilities:</h3>
-          <ul>
+          <ol>
             <li>${el.abilities[0].displayName}</li>
             <img src="${el.abilities[0].displayIcon}" alt="">
             <li>${el.abilities[1].displayName}</li>
             <img src="${el.abilities[1].displayIcon}" alt="">
             <li>${el.abilities[2].displayName}</li>
             <img src="${el.abilities[2].displayIcon}" alt="">
-          </ul>
+          </ol>
         </div>
       </div>
     </div>`
