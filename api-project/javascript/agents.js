@@ -9,11 +9,11 @@ function agentsDATA(data) {
       `<div class="card">
       <div class="card-inner">
         <div class="card-front">
-          <img class="image" src="${el.fullPortrait}" alt="${el.displayName}" />
+          <img class="image" src="${el.fullPortrait}" alt="${el.displayName} portrait" />
         </div>
         <div class="card-back">
           <h2 class="name">${el.displayName}</h2>
-          <img class="image" src="${el.displayIcon}" alt="${el.displayName}" />
+          <img class="image" src="${el.displayIcon}" alt="${el.displayName} icon" />
           <p class="description">${el.description}</p>
           <h3>Abilities:</h3>
           <ol>
@@ -67,11 +67,11 @@ DOM.form.addEventListener("submit", function (a) {
             `<div class="card">
       <div class="card-inner">
         <div class="card-front">
-          <img class="image" src="${el.fullPortrait}" alt="${el.displayName}" />
+          <img class="image" src="${el.fullPortrait}" alt="${el.displayName} portrait" />
         </div>
         <div class="card-back">
           <h2 class="name">${el.displayName}</h2>
-          <img class="image" src="${el.displayIcon}" alt="${el.displayName}" />
+          <img class="image" src="${el.displayIcon}" alt="${el.displayName} icon" />
           <p class="description">${el.description}</p>
           <h3>Abilities:</h3>
           <ul>
