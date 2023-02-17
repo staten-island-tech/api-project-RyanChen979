@@ -9,20 +9,20 @@ function agentsDATA(data) {
       `<div class="card">
       <div class="card-inner">
         <div class="card-front">
-          <img class="image" src="${el.fullPortrait}" alt="" />
+          <img class="image" src="${el.fullPortrait}" alt="${el.displayName}" />
         </div>
         <div class="card-back">
           <h2 class="name">${el.displayName}</h2>
-          <img class="image" src="${el.displayIcon}" alt="" />
+          <img class="image" src="${el.displayIcon}" alt="${el.displayName}" />
           <p class="description">${el.description}</p>
           <h3>Abilities:</h3>
           <ol>
             <li>${el.abilities[0].displayName}</li>
-            <img src="${el.abilities[0].displayIcon}" alt="">
+            <img src="${el.abilities[0].displayIcon}" alt="${el.abilities[0].displayName}">
             <li>${el.abilities[1].displayName}</li>
-            <img src="${el.abilities[1].displayIcon}" alt="">
+            <img src="${el.abilities[1].displayIcon}" alt="${el.abilities[1].displayName}">
             <li>${el.abilities[2].displayName}</li>
-            <img src="${el.abilities[2].displayIcon}" alt="">
+            <img src="${el.abilities[2].displayIcon}" alt="${el.abilities[2].displayName}">
           </ol>
         </div>
       </div>
