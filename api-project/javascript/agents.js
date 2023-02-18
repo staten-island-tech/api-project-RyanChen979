@@ -43,7 +43,7 @@ async function agents(agentsURL) {
       agentsDATA(data);
     }
   } catch (error) {
-    console.log(error);
+    console.error("The agent does not exist");
   }
 }
 agents(agentsURL);
