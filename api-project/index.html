@@ -42,14 +42,20 @@
           <img class="image" src="${el.displayIcon}" alt="character-image" />
           <p class="description">${el.description}</p>
           <h3>Abilities:</h3>
-          <ul>
-            <li>${el.abilities[0].displayName}</li>
-            <img src="${el.abilities[0].displayIcon}" alt="Ability 1 image" />
-            <li>${el.abilities[1].displayName}</li>
-            <img src="${el.abilities[1].displayIcon}" alt="Ability 2 image" />
-            <li>${el.abilities[2].displayName}</li>
-            <img src="${el.abilities[2].displayIcon}" alt="Ability 3 image" />
-          </ul>
+          <ol>
+            <div class="row">
+              <li>${el.abilities[0].displayName}</li>
+              <img src="${el.abilities[0].displayIcon}" alt="Ability 1 image" />
+            </div>
+            <div class="row">
+              <li>${el.abilities[1].displayName}</li>
+              <img src="${el.abilities[1].displayIcon}" alt="Ability 2 image" />
+            </div>
+            <div class="row">
+              <li>${el.abilities[2].displayName}</li>
+              <img src="${el.abilities[2].displayIcon}" alt="Ability 3 image" />
+            </div>
+          </ol>
         </div>
       </div>
     </div> -->

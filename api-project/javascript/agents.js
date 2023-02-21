@@ -6,27 +6,35 @@ function agentsDATA(data) {
   data.data.forEach((el) => {
     DOM.content.insertAdjacentHTML(
       "beforeend",
-      `<div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img class="image" src="${el.fullPortrait}" alt="${el.displayName} portrait" />
-        </div>
-        <div class="card-back">
-          <h2 class="name">${el.displayName}</h2>
-          <img class="image" src="${el.displayIcon}" alt="${el.displayName} icon" />
-          <p class="description">${el.description}</p>
-          <h3>Abilities:</h3>
-          <ol>
-            <li>${el.abilities[0].displayName}</li>
-            <img src="${el.abilities[0].displayIcon}" alt="${el.abilities[0].displayName}">
-            <li>${el.abilities[1].displayName}</li>
-            <img src="${el.abilities[1].displayIcon}" alt="${el.abilities[1].displayName}">
-            <li>${el.abilities[2].displayName}</li>
-            <img src="${el.abilities[2].displayIcon}" alt="${el.abilities[2].displayName}">
-          </ol>
+      `
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img class="image" src="${el.fullPortrait}" alt="character-image" />
+          </div>
+          <div class="card-back">
+            <h2 class="name">${el.displayName}</h2>
+            <img class="image" src="${el.displayIcon}" alt="character-image" />
+            <p class="description">${el.description}</p>
+            <h3>Abilities:</h3>
+            <ol>
+              <div class="row">
+                <li>${el.abilities[0].displayName}</li>
+                <img class="img" src="${el.abilities[0].displayIcon}" alt="Ability 1 image" />
+              </div>
+              <div class="row">
+                <li>${el.abilities[1].displayName}</li>
+                <img class="img" src="${el.abilities[1].displayIcon}" alt="Ability 2 image" />
+              </div>
+              <div class="row">
+                <li>${el.abilities[2].displayName}</li>
+                <img class="img" src="${el.abilities[2].displayIcon}" alt="Ability 3 image" />
+              </div>
+            </ol>
+          </div>
         </div>
       </div>
-    </div>`
+      `
     );
     console.log(el.displayName);
   });
@@ -69,27 +77,29 @@ DOM.form.addEventListener("submit", function (a) {
           .map((el) => {
             DOM.content.insertAdjacentHTML(
               "beforeend",
-              `<div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img class="image" src="${el.fullPortrait}" alt="${el.displayName} portrait" />
-        </div>
-        <div class="card-back">
-          <h2 class="name">${el.displayName}</h2>
-          <img class="image" src="${el.displayIcon}" alt="${el.displayName} icon" />
-          <p class="description">${el.description}</p>
-          <h3>Abilities:</h3>
-          <ul>
-            <li>${el.abilities[0].displayName}</li>
-            <img src="${el.abilities[0].displayIcon}" alt="${el.abilities[0].displayName}">
-            <li>${el.abilities[1].displayName}</li>
-            <img src="${el.abilities[1].displayIcon}" alt="${el.abilities[1].displayName}">
-            <li>${el.abilities[2].displayName}</li>
-            <img src="${el.abilities[2].displayIcon}" alt="${el.abilities[2].displayName}">
-          </ul>
-        </div>
-      </div>
-    </div>`
+              `
+              <div class="card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <img class="image" src="${el.fullPortrait}" alt="${el.displayName} portrait" />
+                  </div>
+                  <div class="card-back">
+                    <h2 class="name">${el.displayName}</h2>
+                    <img class="image" src="${el.displayIcon}" alt="${el.displayName} icon" />
+                    <p class="description">${el.description}</p>
+                    <h3>Abilities:</h3>
+                    <ol>
+                      <li>${el.abilities[0].displayName}</li>
+                      <img src="${el.abilities[0].displayIcon}" alt="${el.abilities[0].displayName}">
+                      <li>${el.abilities[1].displayName}</li>
+                      <img src="${el.abilities[1].displayIcon}" alt="${el.abilities[1].displayName}">
+                      <li>${el.abilities[2].displayName}</li>
+                      <img src="${el.abilities[2].displayIcon}" alt="${el.abilities[2].displayName}">
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              `
             );
           });
       } else {

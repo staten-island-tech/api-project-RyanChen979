@@ -139,19 +139,24 @@ label {
   background-image: linear-gradient(315deg, #6f04d9, #d9048e);
   transform: rotateY(180deg);
 }
-.card-back img {
+.card-back .image {
   width: 25%;
   height: auto;
 }
-.card-back ol {
+.card-back .row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  text-align: justify;
-  width: 85%;
+  flex-direction: row;
+  width: 60%;
+  align-items: center;
+  margin-left: 5rem;
+}
+.card-back .img {
+  height: 7rem;
+  width: auto;
 }
 .card-back li {
-  width: 40%;
+  width: 60%;
+  text-align: justify;
 }
 
 .name {
