@@ -36,6 +36,7 @@ async function agents(agentsURL) {
   try {
     const response = await fetch(agentsURL);
     const data = await response.json();
+    console.log(data);
 
     if (data.status <= 199 || data.status >= 300) {
       throw new Error(data);
@@ -43,7 +44,7 @@ async function agents(agentsURL) {
       agentsDATA(data);
     }
   } catch (error) {
-    console.error("The agent does not exist");
+    console.error("There's a problem with the API");
   }
 }
 agents(agentsURL);
@@ -51,20 +52,24 @@ agents(agentsURL);
 DOM.form.addEventListener("submit", function (a) {
   a.preventDefault();
 
-  let userInput = DOM.searchInput.value;
-  console.log(userInput);
+  let input = DOM.searchInput.value;
+  const userInput =
+    input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+  console.log(`User searched: ${userInput}`);
 
   DOM.content.innerHTML = "";
   async function newAgent(agentsURL, userInput) {
     try {
       const response = await fetch(agentsURL);
       const data = await response.json();
-      data.data
-        .filter((el) => el.displayName.includes(`${userInput}`))
-        .map((el) => {
-          DOM.content.insertAdjacentHTML(
-            "beforeend",
-            `<div class="card">
+
+      if (data.data.filter((el) => el.displayName.includes(`${userInput}`))) {
+        data.data
+          .filter((el) => el.displayName.includes(`${userInput}`))
+          .map((el) => {
+            DOM.content.insertAdjacentHTML(
+              "beforeend",
+              `<div class="card">
       <div class="card-inner">
         <div class="card-front">
           <img class="image" src="${el.fullPortrait}" alt="${el.displayName} portrait" />
@@ -85,10 +90,16 @@ DOM.form.addEventListener("submit", function (a) {
         </div>
       </div>
     </div>`
-          );
-        });
+            );
+          });
+      } else {
+        DOM.content.insertAdjacentHTML(
+          "beforeend",
+          `¯\_(ツ)_/¯ check ur spelling smh`
+        );
+      }
     } catch (error) {
-      console.log(error);
+      console.error();
     }
   }
   newAgent(agentsURL, userInput);
