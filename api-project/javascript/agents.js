@@ -10,11 +10,11 @@ function agentsDATA(data) {
       <div class="card">
         <div class="card-inner">
           <div class="card-front">
-            <img class="image" src="${el.fullPortrait}" alt="character-image" />
+            <img class="image" src="${el.fullPortrait}" alt="Portrait of ${el.displayName}" />
           </div>
           <div class="card-back">
             <h2 class="name">${el.displayName}</h2>
-            <img class="image" src="${el.displayIcon}" alt="character-image" />
+            <img class="image" src="${el.displayIcon}" alt="Picture of ${el.displayName}" />
             <p class="description">${el.description}</p>
             <h3>Abilities:</h3>
             <ol>
@@ -65,6 +65,7 @@ DOM.form.addEventListener("submit", function (a) {
     input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
   console.log(`User searched: ${userInput}`);
 
+  DOM.searchInput.value = "";
   DOM.content.innerHTML = "";
   async function newAgent(agentsURL, userInput) {
     try {
@@ -79,26 +80,33 @@ DOM.form.addEventListener("submit", function (a) {
               "beforeend",
               `
               <div class="card">
-                <div class="card-inner">
-                  <div class="card-front">
-                    <img class="image" src="${el.fullPortrait}" alt="${el.displayName} portrait" />
-                  </div>
-                  <div class="card-back">
-                    <h2 class="name">${el.displayName}</h2>
-                    <img class="image" src="${el.displayIcon}" alt="${el.displayName} icon" />
-                    <p class="description">${el.description}</p>
-                    <h3>Abilities:</h3>
-                    <ol>
-                      <li>${el.abilities[0].displayName}</li>
-                      <img src="${el.abilities[0].displayIcon}" alt="${el.abilities[0].displayName}">
-                      <li>${el.abilities[1].displayName}</li>
-                      <img src="${el.abilities[1].displayIcon}" alt="${el.abilities[1].displayName}">
-                      <li>${el.abilities[2].displayName}</li>
-                      <img src="${el.abilities[2].displayIcon}" alt="${el.abilities[2].displayName}">
-                    </ol>
-                  </div>
-                </div>
+        <div class="card-inner">
+          <div class="card-front">
+            <img class="image" src="${el.fullPortrait}" alt="Portrait of ${el.displayName}" />
+          </div>
+          <div class="card-back">
+            <h2 class="name">${el.displayName}</h2>
+            <img class="image" src="${el.displayIcon}" alt="Picture of ${el.displayName}" />
+            <p class="description">${el.description}</p>
+            <h3>Abilities:</h3>
+            <ol>
+              <div class="row">
+                <li>${el.abilities[0].displayName}</li>
+                <img class="img" src="${el.abilities[0].displayIcon}" alt="Ability 1 image" />
               </div>
+              <div class="row">
+                <li>${el.abilities[1].displayName}</li>
+                <img class="img" src="${el.abilities[1].displayIcon}" alt="Ability 2 image" />
+              </div>
+              <div class="row">
+                <li>${el.abilities[2].displayName}</li>
+                <img class="img" src="${el.abilities[2].displayIcon}" alt="Ability 3 image" />
+              </div>
+            </ol>
+          </div>
+        </div>
+      </div>
+
               `
             );
           });
@@ -113,4 +121,9 @@ DOM.form.addEventListener("submit", function (a) {
     }
   }
   newAgent(agentsURL, userInput);
+});
+
+DOM.showButton.addEventListener("click", function () {
+  DOM.content.innerHTML = "";
+  agents(agentsURL);
 });
